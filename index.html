@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>さいとう |仮想通貨ライター／AIスペシャリスト</title>
+<meta name="description" content="仮想通貨ライター／AIスペシャリスト。Cryptonewsでの執筆、AI自動生成ボット構築、SNS運用まで。フリーランス9年目。">
+<meta property="og:title" content="さいとう |仮想通貨ライター／AIスペシャリスト">
+<meta property="og:description" content="記事執筆・AI自動化・SNS運用を一気通貫で。フリーランス9年目。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090f; --bg2:#0c111c; --card:rgba(255,255,255,.035); --line:rgba(255,255,255,.09);
+  --text:#eef1f8; --muted:#8f9ab3; --a:#5eead4; --b:#818cf8; --c:#f0abfc;
+  --grad:linear-gradient(100deg,var(--a),var(--b) 55%,var(--c));
+  --r:18px;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.85;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:
+  radial-gradient(700px 500px at 85% -5%,rgba(129,140,248,.22),transparent),
+  radial-gradient(600px 460px at -5% 30%,rgba(94,234,212,.12),transparent),
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/64px 64px,
+  linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/64px 64px;
+  -webkit-mask-image:linear-gradient(#000 0%,transparent 75%);mask-image:linear-gradient(#000 0%,transparent 75%);opacity:.9}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.mono{font-family:"JetBrains Mono",monospace}
+
+header{position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:20;width:min(760px,calc(100% - 28px));
+  display:flex;align-items:center;justify-content:space-between;padding:8px 10px 8px 22px;border-radius:999px;
+  background:rgba(12,17,28,.7);backdrop-filter:blur(14px);border:1px solid var(--line)}
+.logo{font-family:Inter,sans-serif;font-weight:800;letter-spacing:.04em;font-size:14px}
+nav{display:flex;align-items:center;gap:22px;font-size:13px;color:var(--muted)}
+nav a:hover{color:var(--text)}
+.pill{background:var(--text);color:#0a0d14;font-weight:700;padding:8px 18px;border-radius:999px;font-size:13px}
+@media(max-width:640px){nav a:not(.pill){display:none}}
+
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:999px;font-weight:700;font-size:15px;transition:.25s}
+.btn.p{background:var(--grad);color:#07131a}
+.btn.p:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(129,140,248,.45)}
+.btn.g{border:1px solid var(--line);background:var(--card)}
+.btn.g:hover{border-color:var(--a)}
+
+.hero{min-height:100svh;display:flex;align-items:center;padding:120px 0 70px}
+.tag-line{display:inline-flex;align-items:center;gap:10px;font-size:12.5px;color:var(--a);padding:6px 16px;border:1px solid rgba(94,234,212,.35);border-radius:999px;background:rgba(94,234,212,.06)}
+.tag-line i{width:7px;height:7px;border-radius:50%;background:var(--a);box-shadow:0 0 12px var(--a);animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.25}}
+h1{font-family:Inter,"Noto Sans JP",sans-serif;font-size:clamp(40px,8.4vw,92px);line-height:1.08;font-weight:800;letter-spacing:-.035em;margin:26px 0 22px}
+h1 .nw{display:inline-block}
+h1{font-size:clamp(32px,7vw,76px)!important}
+h1 .g{background:linear-gradient(100deg,var(--a),var(--b),var(--c),var(--a));background-size:250% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 8s linear infinite}
+@keyframes shine{to{background-position:250% 0}}
+.orb{position:fixed;z-index:-1;border-radius:50%;filter:blur(90px);opacity:.35;pointer-events:none;animation:float 16s ease-in-out infinite}
+.orb.o1{width:380px;height:380px;background:#6366f1;top:8%;right:-100px}
+.orb.o2{width:320px;height:320px;background:#14b8a6;top:48%;left:-120px;animation-delay:-6s}
+@keyframes float{50%{transform:translate(-40px,50px) scale(1.12)}}
+.marquee{overflow:hidden;border-block:1px solid var(--line);background:rgba(255,255,255,.02);padding:16px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.marquee div{display:flex;gap:44px;width:max-content;animation:slide 32s linear infinite;font-family:Inter,sans-serif;font-weight:800;font-size:clamp(20px,3vw,30px);letter-spacing:.02em;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.28)}
+.marquee span:nth-child(3n){color:var(--text);-webkit-text-stroke:0}
+@keyframes slide{to{transform:translateX(-50%)}}
+h1 small{display:block;font-family:"Noto Sans JP";font-size:clamp(17px,2.6vw,24px);font-weight:500;letter-spacing:0;color:var(--muted);margin-top:18px;line-height:1.7}
+.axes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:28px;max-width:520px}
+.axes div{border:1px solid var(--line);background:var(--card);border-radius:14px;padding:12px 14px;font-weight:700;font-size:15px;line-height:1.5;position:relative;overflow:hidden}
+.axes div::before{content:"";position:absolute;left:0;top:0;right:0;height:2px;background:var(--grad)}
+.axes b{display:block;font-family:"JetBrains Mono",monospace;font-size:11px;color:var(--a);font-weight:500}
+.axes small{display:block;font-size:11.5px;color:var(--muted);font-weight:400;margin:0}
+@media(max-width:480px){.axes small{display:none}}
+.hero .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.hero-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:48px;align-items:center}
+@media(max-width:900px){.hero-grid{grid-template-columns:1fr}}
+.term{border:1px solid var(--line);background:rgba(8,11,18,.8);border-radius:var(--r);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.term .bar{display:flex;gap:7px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.term .bar i{width:10px;height:10px;border-radius:50%;background:#2b3345}
+.term pre{padding:20px;font-family:"JetBrains Mono",monospace;font-size:12.5px;line-height:1.9;color:#b9c3dc;white-space:pre-wrap}
+.term .k{color:var(--c)} .term .s{color:var(--a)} .term .n{color:var(--b)}
+.term .cur{display:inline-block;width:8px;height:14px;background:var(--a);vertical-align:-2px;animation:pulse 1s infinite}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:70px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
+.stat{background:var(--bg2);padding:24px}
+.stat b{display:block;font-family:Inter,sans-serif;font-size:34px;font-weight:800;line-height:1.2;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat small{color:var(--muted);font-size:13px}
+
+section{padding:96px 0}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--a)}
+h2{font-size:clamp(26px,4vw,40px);font-weight:900;line-height:1.35;margin:10px 0 44px;letter-spacing:-.01em}
+.grid{display:grid;gap:16px}.g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}
+@media(max-width:860px){.g2,.g3{grid-template-columns:1fr}}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:.3s;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(400px 160px at var(--x,50%) -20%,rgba(129,140,248,.18),transparent);opacity:0;transition:.3s;pointer-events:none}
+.card:hover{border-color:rgba(255,255,255,.22);transform:translateY(-4px)}
+.card:hover::after{opacity:1}
+.card .no{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--b)}
+.card h3{font-size:19px;line-height:1.55;margin:8px 0 10px}
+.card p{color:var(--muted);font-size:15px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tag{font-size:12px;padding:3px 12px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+
+/* timeline */
+.tl{position:relative;padding-left:30px}
+.tl::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--a),var(--b),transparent)}
+.tl-i{position:relative;padding:0 0 34px}
+.tl-i::before{content:"";position:absolute;left:-30px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:2px solid var(--a);box-shadow:0 0 14px rgba(94,234,212,.6)}
+.tl-i .when{font-family:"JetBrains Mono",monospace;font-size:12.5px;color:var(--a)}
+.tl-i h3{font-size:20px;margin:2px 0}
+.tl-i .org{color:var(--muted);font-size:14.5px}
+.tl-i p{color:var(--muted);font-size:14.5px;margin-top:6px;max-width:640px}
+.now{font-size:11px;background:var(--grad);color:#07131a;font-weight:800;padding:2px 10px;border-radius:99px;margin-left:8px;vertical-align:2px}
+
+.skills{display:grid;gap:18px}
+.skill{display:grid;grid-template-columns:230px 1fr 48px;align-items:center;gap:14px;font-size:14.5px}
+.bar{height:6px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar span{display:block;height:100%;width:0;background:var(--grad);border-radius:99px;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
+.skill em{font-style:normal;color:var(--muted);text-align:right;font-family:Inter}
+@media(max-width:560px){.skill{grid-template-columns:1fr 44px}.skill .bar{grid-column:1/-1;order:3}}
+
+.work .meta{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--b)}
+blockquote{margin-top:16px;padding-left:14px;border-left:2px solid var(--a);color:var(--muted);font-size:14px}
+.post{font-size:15px;color:#cdd5e8}
+.post cite{display:block;margin-top:14px;font-style:normal;font-size:12px;color:var(--muted);font-family:"JetBrains Mono",monospace}
+.big{font-size:44px;line-height:1;color:var(--b);font-family:Inter;font-weight:800}
+
+.price .yen{font-family:Inter,sans-serif;font-size:38px;font-weight:800;margin:8px 0}
+.price .yen small{font-size:14px;color:var(--muted);font-weight:500;font-family:"Noto Sans JP"}
+.price.feat{border-color:rgba(94,234,212,.55)}
+
+.contact .card{text-align:center;padding:64px 24px;background:linear-gradient(135deg,rgba(129,140,248,.16),rgba(94,234,212,.06))}
+.contact p{color:var(--muted);max-width:520px;margin:0 auto 30px}
+.contact .btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:18px 14px;margin-bottom:26px}
+.flinks a{display:flex;flex-direction:column;align-items:center;gap:8px;width:84px;font-size:11.5px;color:var(--muted);transition:.25s}
+.flinks svg{width:48px;height:48px;padding:13px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--text);transition:.25s}
+.flinks a:hover{color:var(--text)}
+.flinks a:hover svg{border-color:var(--a);color:var(--a);transform:translateY(-3px);box-shadow:0 8px 24px rgba(94,234,212,.25)}
+footer{padding:44px 0;border-top:1px solid var(--line);color:var(--muted);font-size:13px;text-align:center}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .8s,transform .8s}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.tag-line i,.cur,.orb,.marquee div,h1 .g{animation:none}.bar span{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div>
+<header>
+  <a href="#top" class="logo">さいとう</a>
+  <nav>
+    <a href="#about">About</a><a href="#career">Career</a><a href="#services">Services</a>
+    <a href="#contact" class="pill">Contact</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero" style="padding-bottom:70px">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="tag-line mono"><i></i>ご依頼受付中</span>
+        <h1><span class="g">仮想通貨・SNS・AI</span><br><span class="nw">を武器に。</span>
+          <small>仮想通貨の執筆と投資、SNSでの発信、AIの自動化。<br>この3つを掛け合わせて「早い＆高品質」にお応えします。</small>
+        </h1>
+        <div class="axes">
+          <div><b>01</b>仮想通貨<small>執筆・リサーチ・投資</small></div>
+          <div><b>02</b>SNS<small>運用・発信・集客</small></div>
+          <div><b>03</b>AI<small>開発・自動化</small></div>
+        </div>
+        <div class="btns">
+          <a class="btn p" href="#contact">お仕事の相談をする →</a>
+          <a class="btn g" href="#career">経歴を見る</a>
+        </div>
+      </div>
+      <div class="term reveal" aria-hidden="true">
+        <div class="bar"><i></i><i></i><i></i></div>
+<pre><span class="k">const</span> saito = {
+  axes: [<span class="s">"Crypto"</span>, <span class="s">"SNS"</span>, <span class="s">"AI"</span>],
+  role: <span class="s">"Writer / Marketer / Builder"</span>,
+  base: <span class="s">"Tokyo, Japan"</span>,
+  web3Since: <span class="n">2020</span>,
+  freelance: <span class="s">"9 years"</span>,
+  status: <span class="s">"open to work"</span>
+}<span class="cur"></span></pre>
+      </div>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><b>9年</b><small>フリーランス歴</small></div>
+      <div class="stat"><b>2020〜</b><small>Web3・暗号資産の投資</small></div>
+      <div class="stat"><b>1万+</b><small>SNS・メルマガ 総フォロワー</small></div>
+      <div class="stat"><b>100%</b><small>ランサーズ 完了率</small></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div id="mq"></div></div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow reveal">// about</div>
+    <h2 class="reveal">3つの視点で、成果につなげる。</h2>
+    <div class="grid g3">
+      <div class="card reveal"><span class="no">01</span><h3>投資家・リサーチャー目線</h3><p>2020年からのWeb3投資経験。数字と一次情報を根拠に、正確な情報を届けます。</p></div>
+      <div class="card reveal"><span class="no">02</span><h3>ライター・発信者目線</h3><p>自社メディアの累計売上は100万円以上。読まれ、行動される文章を実践で磨いてきました。</p></div>
+      <div class="card reveal"><span class="no">03</span><h3>AI・自動化目線</h3><p>Gemini・ChatGPTなどを使いこなし、品質とスピードを両立する仕組みをつくります。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="career">
+  <div class="wrap">
+    <div class="eyebrow reveal">// career</div>
+    <h2 class="reveal">経歴</h2>
+    <div class="tl">
+      <div class="tl-i reveal">
+        <div class="when">2025.01 — 現在</div>
+        <h3>AI Specialist <span class="now">NOW</span></h3>
+        <div class="org">個人事業主（リモート）</div>
+        <p>Google Gemini・ChatGPTなどを活用した、コンテンツ自動生成ボットの構築とAI運用の支援。</p>
+      </div>
+      <div class="tl-i reveal">
+        <div class="when">2024.02 — 2026.09</div>
+        <h3>Crypto Writer</h3>
+        <div class="org">Cryptonews</div>
+        <p>仮想通貨ニュースの執筆。WordPressでの運用と、検索を意識した記事づくり。</p>
+      </div>
+      <div class="tl-i reveal">
+        <div class="when">2023.04 — 2023.08</div>
+        <h3>Crypto Writer</h3>
+        <div class="org">JinaCoin</div>
+        <p>仮想通貨メディアでの記事執筆（WordPress）。</p>
+      </div>
+      <div class="tl-i reveal">
+        <div class="when">2021.07 — 現在</div>
+        <h3>SNS Influencer / Blogger</h3>
+        <div class="org">個人事業主</div>
+        <p>自社メディア『さいとうDeFiブログ』を運営。SNS・メルマガの総フォロワーは1万人超。</p>
+      </div>
+      <div class="tl-i reveal">
+        <div class="when">2018.05 — 2023.06</div>
+        <h3>Sales Staff</h3>
+        <div class="org">ベンチャー企業（商品営業）</div>
+        <p>営業として5年間従事。ここで培った「相手の課題を聞く力」が、今の執筆やご提案に活きています。</p>
+      </div>
+      <div class="tl-i reveal" style="padding-bottom:0">
+        <div class="when">2018.05 — 2020.05</div>
+        <h3>Web Designing</h3>
+        <div class="org">個人事業主</div>
+        <p>LPのコーディングなど、Web制作の案件を担当。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="eyebrow reveal">// services</div>
+    <h2 class="reveal">できること</h2>
+    <div class="grid g2">
+      <article class="card reveal"><span class="no">01</span><h3>AI活用の自動生成ボット構築</h3><p>GPTs、Claude Projects、Gemini Gemsで、海外速報の自動要約や記事下書きの仕組みを設計。ハルシネーションを抑えるプロンプト設計まで対応します。</p><div class="tags"><span class="tag">GPTs</span><span class="tag">Claude</span><span class="tag">Gemini</span><span class="tag">Prompt</span></div></article>
+      <article class="card reveal"><span class="no">02</span><h3>暗号資産の専門記事執筆・編集</h3><p>オンチェーン分析や市場トレンドの解説。ニュース記事の執筆実績をもとに、検索にも読者にも届く記事に仕上げます。</p><div class="tags"><span class="tag">ニュース</span><span class="tag">SEO</span></div></article>
+      <article class="card reveal"><span class="no">03</span><h3>SNS運用・ショート動画制作支援</h3><p>Instagram Reels・TikTok・YouTube Shortsに対応。Vrew・CapCutで制作フローを自動化し、続けられる運用体制を整えます。</p><div class="tags"><span class="tag">Reels</span><span class="tag">TikTok</span><span class="tag">Shorts</span></div></article>
+      <article class="card reveal"><span class="no">04</span><h3>メディア・SNS集客の分析と改善</h3><p>数字を見て次の一手を決める。集客導線やコンテンツの改善点を洗い出し、実行しやすい形でご提案します。</p><div class="tags"><span class="tag">SNSコンサル</span><span class="tag">Marketing</span><span class="tag">WordPress</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="skills" style="padding-top:20px">
+  <div class="wrap">
+    <div class="eyebrow reveal">// skills</div>
+    <h2 class="reveal">スキルと経験年数</h2>
+    <div class="skills reveal" id="skillList"></div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="card reveal">
+      <div class="eyebrow">// contact</div>
+      <h2 style="margin-bottom:14px">まずは気軽にご相談ください。</h2>
+      <p>「こんなことはできる？」という段階でも大丈夫です。メール、ランサーズ、LinkedInからご連絡ください。</p>
+      <div class="btns">
+        <a class="btn p" href="mailto:epiphone.nao.1995@gmail.com">メールで相談する ✉</a>
+        <a class="btn g" href="https://www.lancers.jp/profile/naoki5296" target="_blank" rel="noopener">ランサーズで相談する ↗</a>
+        <a class="btn g" href="https://www.linkedin.com/in/naoki-saito-05a63a277" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="flinks">
+      <a href="https://twitter.com/saito_pickNEWS" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span>X</span></a>
+      <a href="https://naokoku.net/" target="_blank" rel="noopener" aria-label="ブログ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1-4L16.5 4.5a2.1 2.1 0 013 3L8 19z"/><path d="M14.5 6.5l3 3M4 20l4-1"/></svg><span>ブログ</span></a>
+      <a href="https://saitocryptotrend.substack.com/" target="_blank" rel="noopener" aria-label="メルマガ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5l8.5 6 8.5-6"/></svg><span>メルマガ</span></a>
+      <a href="https://note.com/pick_newsk" target="_blank" rel="noopener" aria-label="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="4"/><path d="M8 16v-5.5M8 12.5c0-1.5 1-2.2 2.3-2.2S12.5 11 12.5 12.5V16M12.5 12.5c0-1.5 1-2.2 2.3-2.2S17 11 17 12.5V16"/></svg><span>note</span></a>
+      <a href="https://open.spotify.com/show/3D5IhlSj4NLFJh6t7h79dI" target="_blank" rel="noopener" aria-label="ポッドキャスト"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M7.5 9.5c3.2-1 6.8-.7 9.5 1M8 12.6c2.6-.7 5.4-.5 7.7 1M8.6 15.5c2-.5 4-.3 5.8.7"/></svg><span>ポッドキャスト</span></a>
+      <a href="https://www.linkedin.com/in/naoki-saito-05a63a277" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452z"/></svg><span>LinkedIn</span></a>
+      <a href="https://www.lancers.jp/profile/naoki5296" target="_blank" rel="noopener" aria-label="ランサーズ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="12" rx="2.5"/><path d="M9 7.5V6a2 2 0 012-2h2a2 2 0 012 2v1.5M3 13h18"/></svg><span>ランサーズ</span></a>
+      <a href="mailto:epiphone.nao.1995@gmail.com" aria-label="メール"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 7.5l8.5 6 8.5-6"/></svg><span>メール</span></a>
+    </div>
+    <div>© 2026 さいとう. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+const skills=[["AI活用",3],["SNSコンサルティング",5],["営業",5],["マーケティング",3],["WordPress",3],["HTML / CSS / JavaScript / jQuery",1]];
+document.getElementById("skillList").innerHTML=skills.map(([n,y])=>`<div class="skill"><span>${n}</span><div class="bar"><span data-w="${y/5*100}"></span></div><em>${y}年</em></div>`).join("");
+const words=["CRYPTO","SNS","AI","WEB3","DEFI","CONTENT","AUTOMATION","WRITING"];
+document.getElementById("mq").innerHTML=[...words,...words,...words,...words].map(w=>`<span>${w}</span>`).join("");
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;
+  e.target.classList.add("in");
+  e.target.querySelectorAll(".bar span").forEach(b=>b.style.width=b.dataset.w+"%");
+  io.unobserve(e.target);
+}),{threshold:.12});
+document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+document.querySelectorAll(".card").forEach(c=>c.addEventListener("pointermove",e=>{
+  const r=c.getBoundingClientRect();c.style.setProperty("--x",(e.clientX-r.left)+"px");
+}));
+</script>
+</body>
+</html>
